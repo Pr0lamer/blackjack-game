@@ -60,11 +60,13 @@ function renderGame(){
 }
 
 function newCard(){
-    let anotherCard = getRandomInRange(minValue, maxValue);
-    sumOfCards += anotherCard;
-    cardsArray.push(anotherCard);
+    if(isAlive && !hasBlackJack){
+        let anotherCard = getRandomInRange(minValue, maxValue);
+        sumOfCards += anotherCard;
+        cardsArray.push(anotherCard);
+        renderGame();
+    }
     
-    renderGame();
     
 }
 
